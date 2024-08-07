@@ -1,10 +1,11 @@
 
-const mongoose = require("mongoose");
-const express = require('express');
-const { User, Course, Admin } = require("../db");
-const jwt = require('jsonwebtoken');
-const { SECRET } = require("../middleware/auth");
-const { authenticateJwt } = require("../middleware/auth");
+import express from "express";
+import { Course, Admin } from "../db/index.js";
+import jwt from "jsonwebtoken";
+import { authenticateJwt, SECRET } from "../middleware/auth.js";
+
+
+
 
 const router = express.Router();
 
@@ -106,4 +107,4 @@ router.get('/course/:courseId', authenticateJwt, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
