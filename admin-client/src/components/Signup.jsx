@@ -64,7 +64,8 @@ function Signup() {
                             navigate("/courses")
                         }
                         catch (error) {
-                            alert("Already exits");
+                            alert("Already exists");
+                            navigate("/signin")
                         }
                     }}
 

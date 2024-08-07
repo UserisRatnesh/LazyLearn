@@ -28,9 +28,8 @@ function Signin() {
         <div style={{ display: "flex", justifyContent: "center" }}>
             <Card varint={"outlined"} style={{ width: 400, padding: 20 }}>
                 <TextField
-                    onChange={(evant11) => {
-                        let elemt = evant11.target;
-                        setEmail(elemt.value);
+                    onChange={(e) => {
+                        setEmail(e.target.value);
                     }}
                     fullWidth={true}
                     label="Email"
