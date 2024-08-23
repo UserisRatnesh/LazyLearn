@@ -22,7 +22,7 @@ function Signin() {
             justifyContent: "center"
         }}>
             <Typography variant={"h6"}>
-                Welcome to Coursera. Sign in below
+                Welcome to LazyLearn. Sign in below
             </Typography>
         </div>
         <div style={{ display: "flex", justifyContent: "center" }}>
