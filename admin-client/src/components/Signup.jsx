@@ -61,7 +61,7 @@ function Signup() {
                             let data = response.data;
                             localStorage.setItem("token", data.token);
                             setUser({ userEmail: email, isLoading: false })
-                            navigate("/courses")
+                            navigate("/")
                         }
                         catch (error) {
                             alert("Already exists");

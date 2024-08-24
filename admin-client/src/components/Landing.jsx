@@ -14,7 +14,7 @@ export const Landing = () => {
             <Grid item xs={12} md={6} lg={6}>
                 <div style={{ marginTop: 100 }}>
                     <Typography variant={"h2"}>
-                        LazyLearn Admin
+                        Welcome to LazyLearn!
                     </Typography>
                     <Typography variant={"h5"}>
                         A place to learn, earn and grow
