@@ -15,7 +15,7 @@ router.get("/me", authenticateJwt, async (req, res) => {
     if (!admin) {
       return res.status(403).json({ msg: "Admin doesn't exist" });
     }
-    res.json({ username: admin.username });
+    res.json({ username: admin.data.username });
   } catch (error) {
     console.error(error);
     res.status(500).json({ msg: "Server error" });
@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
       return res.status(403).json({ message: 'Invalid username or password' });
     }
 
-    const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '2h' });
     res.json({ message: 'Logged in successfully', token });
   } catch (error) {
     console.error(error);
