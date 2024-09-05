@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '2h' });
     res.json({ message: 'Logged in successfully', token });
   } catch (error) {
-    console.error(error);
+    console.error("err", error);
     res.status(500).json({ msg: "Server error" });
   }
 });
@@ -83,6 +83,20 @@ router.put('/courses/:courseId', authenticateJwt, async (req, res) => {
     res.status(500).json({ msg: "Server error" });
   }
 });
+
+router.delete('/courses/:courseId', authenticateJwt, async (req, res) => {
+  try {
+    const course = await Course.findByIdAndDelete(req.params.courseId);
+    if (!course) {
+      return res.status(404).json({ message: 'Course not found' });
+    }
+    res.json({ message: 'Course deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
 
 router.get('/courses', authenticateJwt, async (req, res) => {
   try {
