@@ -1,2 +1,2 @@
-1. Implement feature to delete the course.
+1. Implement feature to delete the course. ==> Done
 
